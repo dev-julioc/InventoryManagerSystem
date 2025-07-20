@@ -114,15 +114,6 @@ Funcionalidades planejadas:
 
 ---
 
-## 💡 Como Contribuir
-
-1. Faça um fork do projeto
-2. Crie uma branch: `git checkout -b feature/nova-funcionalidade`
-3. Commit suas alterações: `git commit -m 'Adiciona nova funcionalidade'`
-4. Push para o repositório: `git push origin feature/nova-funcionalidade`
-5. Abra um Pull Request
-
----
 
 ## 📄 Licença
 
