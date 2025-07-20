@@ -1,0 +1,21 @@
+@page "/auth"
+@using InventoryManagerSystem.WEB.Services.Interfaces
+@inject IAuthService authService
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var response = await authService.SetUpAsync();
+            
+            
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+}

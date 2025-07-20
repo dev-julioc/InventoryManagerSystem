@@ -1,0 +1,29 @@
+@inherits InputBase<string>
+
+<div class="relative w-full mb-6">
+    <InputText
+        id="@Id"
+        type="@Type"
+        @bind-Value="CurrentValue"
+        placeholder=" "
+        class="peer block w-full appearance-none border-b-2 border-gray-300 bg-transparent px-0 py-1 text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" />
+
+    <label
+        for="@Id"
+        class=@($"absolute left-0 text-sm text-gray-500 transition-all duration-200 transform origin-left pointer-events-none peer-focus:-top-3 peer-focus:scale-75 peer-focus:text-blue-600  {(string.IsNullOrWhiteSpace(CurrentValue) ? "top-3 scale-100 text-gray-500" : "-top-3 scale-75 text-blue-600")}")>
+        @Label
+    </label>
+</div>
+
+@code {
+    [Parameter] public string Id { get; set; } = "";
+    [Parameter] public string Type { get; set; } = "text";
+    [Parameter] public string Label { get; set; } = "";
+
+    protected override bool TryParseValueFromString(string? value, out string result, out string? validationErrorMessage)
+    {
+        result = value ?? "";
+        validationErrorMessage = null;
+        return true;
+    }
+}

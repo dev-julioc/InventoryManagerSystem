@@ -1,0 +1,80 @@
+@page "/Login"
+@using Blazored.LocalStorage
+@using InventoryManagerSystem.WEB.Providers
+@inject AuthenticationStateProvider AuthStateProvider
+
+@inject ILocalStorageService LocalStorage
+
+<EditForm Model="_loginRequestDto" method="post" OnValidSubmit="LoginAsync" FormName="Login" Enhance>
+    <div class="border border-blue-500 shadow-lg text-gray-900 p-5 rounded-[24px] min-w-[300px] max-w-md mx-auto">
+        <div class="text-gray-900 text-xl border-b border-blue-500 px-4 py-2 mb-4">
+            Login
+        </div>
+        <div class="p-4 opacity-100">
+            <DataAnnotationsValidator />
+
+            <FloatingInputComponent
+                Id="email"
+                Type="text"
+                Label="Email"
+                @bind-Value="_loginRequestDto.Email" />
+            <ValidationMessage For="@(() => _loginRequestDto.Email)" />
+
+            <FloatingInputComponent
+                Id="password"
+                Type="password"
+                Label="Password"
+                @bind-Value="_loginRequestDto.Password" />
+            <ValidationMessage For="@(() => _loginRequestDto.Password)" />
+            
+
+            <div class="mb-6 flex justify-end">
+                <button class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded cursor-pointer" type="submit">
+                    Logar
+                </button>
+            </div>
+
+            <div>
+                @if (!string.IsNullOrWhiteSpace(_errorMessage))
+                {
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                        @_errorMessage
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    private LoginRequestDto _loginRequestDto = new ();
+    string _errorMessage = "";
+
+    private async Task LoginAsync()
+    {
+        _errorMessage = "";
+        
+        var response = await AuthService.LoginAsync(_loginRequestDto);
+
+        if (!response.IsSuccess)
+        {
+            _errorMessage = _errorMessage = response.Message ?? "Erro desconhecido.";
+            return;
+        }
+
+        if (response.Data.ExpiresIn < DateTime.Now)
+        {
+            NavigationManager.NavigateTo("/Login", forceLoad: true);
+            return;
+        }
+
+        await LocalStorage.SetItemAsStringAsync("authToken", response.Data!.AccessToken);
+
+        if (AuthStateProvider is CustomAuthStateProvider customAuth)
+        {
+            customAuth.NotifyUserAuthentication(response.Data!.AccessToken);
+        }
+        
+        NavigationManager.NavigateTo("/", true);
+    }
+}
