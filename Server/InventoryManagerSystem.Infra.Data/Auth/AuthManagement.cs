@@ -1,5 +1,7 @@
 using System.Security.Claims;
+using InventoryManagerSystem.Domain.Entities;
 using InventoryManagerSystem.Infra.Data.Auth.Identity;
+using InventoryManagerSystem.Infra.Data.DbContext;
 using InventoryManagerSystem.Shared.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 namespace InventoryManagerSystem.Infra.Data.Auth;
 
 public class AuthManagement(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenManagement tokenManagement, 
-    RoleManager<IdentityRole> roleManager, IConfiguration configuration) : IAuthManagement
+    RoleManager<IdentityRole> roleManager, AppDbContext context) : IAuthManagement
 {
     public async Task<(bool IsSuccess, string Message)> RegisterAsync(RegisterRequestDto registerDto)
     {
@@ -152,14 +154,35 @@ public class AuthManagement(UserManager<ApplicationUser> userManager, SignInMana
         return (true, "User updated.");
     }
 
-    public async Task<(bool IsSuccess, string Message)> SaveActivityAsync(ActivityTrackerRequestDto activityTrackerRequestDto)
+    public async Task<(bool IsSuccess, string Message)> SaveActivityAsync(ActivityTrackerRequestDto trackeRequest)
     {
-        throw new NotImplementedException();
+        var tracker = new Tracker(trackeRequest.Date, trackeRequest.Title, trackeRequest.Description, trackeRequest.OperationState, trackeRequest.UserId);
+        context.ActivityTracker.Add(tracker);
+        await context.SaveChangesAsync();
+        return (true, "Success");
     }
 
     public async Task<IEnumerable<ActivityTrackerResponseDto>> GetActivitiesAsync()
     {
-        throw new NotImplementedException();
+        var list = new List<ActivityTrackerResponseDto>();
+        var data = await context.ActivityTracker.ToListAsync();
+        
+        foreach (var activity in data)
+        {
+            var user = await FindUserByIdAsync(activity.UserId!);
+
+            var dto = new ActivityTrackerResponseDto
+            ( 
+                user?.Name!,
+                activity.Date,
+                activity.Title!,
+                activity.Description!,
+                activity.OperationState,
+                activity.UserId!
+            );
+            list.Add(dto);
+        }
+        return list;
     }
 
     public async Task SeedRolesAsync()

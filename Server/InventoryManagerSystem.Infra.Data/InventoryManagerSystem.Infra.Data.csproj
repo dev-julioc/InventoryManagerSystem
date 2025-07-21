@@ -27,7 +27,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\InventoryManagerSystem.Domain\InventoryManagerSystem.Domain.csproj" />
       <ProjectReference Include="..\InventoryManagerSystem.Shared\InventoryManagerSystem.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Repositories\" />
     </ItemGroup>
 
 </Project>

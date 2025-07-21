@@ -107,4 +107,38 @@ public class AuthHandlers
             ? Results.Ok(result)
             : Results.BadRequest(result);
     }
+    
+    /// <summary>
+    /// Efetuar login e receber o token.
+    /// </summary>
+    /// <param name="authService"></param>
+    /// <param name="loginDto">Modelo para efetuar o login.</param>
+    /// <returns>Jwt token.</returns>
+    /// <response code="200">Sucesso.</response>
+    /// <response code="400">Erro de validação.</response>
+    /// <response code="500">Erro interno.</response>
+    public static async Task<IResult> SaveActivity([FromServices] IAuthService authService, ActivityTrackerRequestDto activityTrackerRequestDto)
+    {
+        var result = await authService.SaveActivityAsync(activityTrackerRequestDto);
+
+        return result.IsValid
+            ? Results.Ok(result)
+            : Results.BadRequest(result);
+    }
+    
+    /// <summary>
+    /// Efetuar login e receber o token.
+    /// </summary>
+    /// <param name="authService"></param>
+    /// <param name="loginDto">Modelo para efetuar o login.</param>
+    /// <returns>Jwt token.</returns>
+    /// <response code="200">Sucesso.</response>
+    /// <response code="400">Erro de validação.</response>
+    /// <response code="500">Erro interno.</response>
+    public static async Task<IResult> GetGroupActivities([FromServices] IAuthService authService)
+    {
+        var result = await authService.GroupActivitiesAsync();
+
+        return Results.Ok(result);
+    }
 }

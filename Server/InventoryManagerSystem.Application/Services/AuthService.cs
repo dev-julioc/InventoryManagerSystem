@@ -42,13 +42,22 @@ public class AuthService(IAuthManagement authManagement) : IAuthService
             : ResultService.Ok(result.Message);
     }
 
-    public async Task SaveActivityAsync(ActivityTrackerRequestDto activityTrackerRequestDto)
+    public async Task<ResultService> SaveActivityAsync(ActivityTrackerRequestDto activityTrackerRequestDto)
     {
-        throw new NotImplementedException();
+        var result = await authManagement.SaveActivityAsync(activityTrackerRequestDto);
+        
+        return !result.IsSuccess ? 
+            ResultService.Fail(result.Message) 
+            : ResultService.Ok(result.Message);
     }
 
     public async Task<IEnumerable<IGrouping<DateTime, ActivityTrackerResponseDto>>> GroupActivitiesAsync()
     {
-        throw new NotImplementedException();
+        var result = (await GetActivitiesAsync()).GroupBy(x => x.Date).AsEnumerable();
+        
+        return result;
     }
+
+    private async Task<IEnumerable<ActivityTrackerResponseDto>> GetActivitiesAsync()
+        => await authManagement.GetActivitiesAsync();
 }

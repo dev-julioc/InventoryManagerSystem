@@ -11,6 +11,6 @@ public interface IAuthService
     Task<IEnumerable<UserWithClaimResponseDto>> GetAllUsersWithClaimsAsync();
     Task SetUpAsync();
     Task<ResultService> UpdateUserAsync(ChangeUserClaimRequestDto changeUserClaimRequestDto);
-    Task SaveActivityAsync(ActivityTrackerRequestDto activityTrackerRequestDto);
+    Task<ResultService> SaveActivityAsync(ActivityTrackerRequestDto activityTrackerRequestDto);
     Task<IEnumerable<IGrouping<DateTime, ActivityTrackerResponseDto>>> GroupActivitiesAsync();
 }

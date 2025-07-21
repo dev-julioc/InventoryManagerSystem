@@ -15,9 +15,9 @@ public record UserWithClaimResponseDto(string Email, string UserId, string Name,
 
 public record ChangeUserClaimRequestDto(string UserId, string Name, string RoleName, bool ManagerUser, bool Read, bool Delete, bool Update, bool Create);
 
-public record ActivityTrackerRequestDto();
+public record ActivityTrackerRequestDto(DateTime Date, string Title, string Description, bool OperationState, string UserId);
 
-public record ActivityTrackerResponseDto();
+public record ActivityTrackerResponseDto(string UserName, DateTime Date, string Title, string Description, bool OperationState, string UserId);
 
 public static class Policy
 {

@@ -43,5 +43,15 @@ public class AuthRoutes : ICarterModule
             .Produces(StatusCodes.Status200OK)
             .Produces<ResultService>(StatusCodes.Status400BadRequest)
             .Produces(StatusCodes.Status500InternalServerError);
+        
+        endpoints.MapPost("/activity", AuthHandlers.SaveActivity)
+            .Produces(StatusCodes.Status200OK)
+            .Produces<ResultService>(StatusCodes.Status400BadRequest)
+            .Produces(StatusCodes.Status500InternalServerError);
+        
+        endpoints.MapGet("/activity", AuthHandlers.GetGroupActivities)
+            .Produces(StatusCodes.Status200OK)
+            .Produces<ResultService>(StatusCodes.Status400BadRequest)
+            .Produces(StatusCodes.Status500InternalServerError);
     }
 }
