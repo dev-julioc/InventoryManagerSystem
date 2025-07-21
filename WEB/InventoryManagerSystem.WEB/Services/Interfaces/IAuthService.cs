@@ -7,7 +7,7 @@ public interface IAuthService
 {
     Task<ResultService> RegisterAsync(RegisterRequestDto registerDto);
     Task<ResultService<TokenResponseDto>> LoginAsync(LoginRequestDto loginDto);
-    Task LogoutAsync();
+    Task<ResultService> LogoutAsync();
     Task<ResultService<IEnumerable<UserWithClaimResponseDto>>> GetAllUsersWithClaimsAsync();
     Task<bool> SetUpAsync();
     Task<ResultService> UpdateUserAsync(ChangeUserClaimRequestDto changeUserClaimRequestDto);

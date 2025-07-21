@@ -17,7 +17,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7dbf3b0-b5d4-4463-8f0b-c932d20bda72" name="Changes" comment="" />
+    <list default="true" id="e7dbf3b0-b5d4-4463-8f0b-c932d20bda72" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.InventoryManagerSystem/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryManagerSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryManagerSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/RedirectToLoginComponent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/RedirectToLoginComponent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/InventoryManagerSystem.WEB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/InventoryManagerSystem.WEB.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/AuthLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/AuthLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/MainLayout.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/NavMenu.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/HomePage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/HomePage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/LoginPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/LoginPage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Providers/CustomAuthStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Providers/CustomAuthStateProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/Interfaces/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/sample-data/weather.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/tailwind.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,16 +45,31 @@
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dev-julioc&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dev-julioc/InventoryManagerSystem.git&quot;,
+    &quot;accountId&quot;: &quot;5a5a9516-84a6-4e42-b828-94917bd02b4b&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/24/6de3512d/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/9c/958383fa/AsyncTaskMethodBuilder`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6b7f037ba7b44df80b8d3aa7e58eeb2e8e938/f1/5af81d1a/AwaitTaskContinuation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -43,24 +77,29 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="3060etEBMsXOuiLesJDZDhGKuxf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.InventoryManagerSystem.API: http (1).executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Project.InventoryManagerSystem.WEB.Client.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.InventoryManagerSystem.API: http (1).executor": "Debug",
+    ".NET Project.InventoryManagerSystem.WEB.Client.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.InventoryManagerSystem.API: http (1)">
     <configuration name="InventoryManagerSystem.API" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -347,7 +386,8 @@
       <workItem from="1752944434115" duration="1810000" />
       <workItem from="1752946280492" duration="15261000" />
       <workItem from="1753022345762" duration="4475000" />
-      <workItem from="1753027009007" duration="14899000" />
+      <workItem from="1753027009007" duration="16437000" />
+      <workItem from="1753119148441" duration="9419000" />
     </task>
     <servers />
   </component>

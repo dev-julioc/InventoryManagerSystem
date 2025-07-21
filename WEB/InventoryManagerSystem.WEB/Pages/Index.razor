@@ -1,3 +1,4 @@
+@page "/"
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthStateProvider
 
@@ -7,7 +8,11 @@
         var authState = await AuthStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-        if (!user.Identity?.IsAuthenticated ?? true)
+        if (user.Identity?.IsAuthenticated ?? false)
+        {
+            Navigation.NavigateTo("/home", true);
+        }
+        else
         {
             Navigation.NavigateTo("/login", true);
         }

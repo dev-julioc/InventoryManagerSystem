@@ -1,40 +1,33 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">InventoryManagerSystem</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿@inject IAuthService authService
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+<nav class="flex flex-col space-y-4 text-white">
+    <NavLink href="/home" class="flex !text-white items-center px-3 py-2 rounded hover:bg-white/10 transition"
+             ActiveClass="bg-white/10 !text-white">
+        <i class="bi bi-house mr-2"></i>
+        Home
+    </NavLink>
+
+    <button @onclick="Logout" class="flex items-center px-3 py-2 rounded hover:bg-white/10 transition cursor-pointer">
+        <i class="bi bi-box-arrow-right mr-2"></i>
+        Logout
+    </button>
+    @Message
+</nav>
+
 
 @code {
-    private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    public string? Message { get; set; } = "";
+    
+    private async void Logout()
     {
-        collapseNavMenu = !collapseNavMenu;
-    }
+        var response = await authService.LogoutAsync();
 
+        if (!response.IsSuccess)
+        {
+            Message = "Não foi possível fazer o logout";
+        }
+
+        Message = "Logout com sucesso";
+    }
 }

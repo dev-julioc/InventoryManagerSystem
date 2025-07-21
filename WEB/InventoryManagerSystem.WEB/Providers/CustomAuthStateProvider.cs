@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Blazored.LocalStorage;
 
+
 namespace InventoryManagerSystem.WEB.Providers;
 
 using Microsoft.AspNetCore.Components.Authorization;
@@ -32,6 +33,9 @@ public class CustomAuthStateProvider(ILocalStorageService localStorageService) :
     
     private static bool IsExpiredToken(string jwtToken)
     {
+        if (string.IsNullOrWhiteSpace(jwtToken) || string.IsNullOrWhiteSpace(jwtToken))
+            return true;
+        
         var handler = new JwtSecurityTokenHandler();
         
         var token = handler.ReadJwtToken(jwtToken);

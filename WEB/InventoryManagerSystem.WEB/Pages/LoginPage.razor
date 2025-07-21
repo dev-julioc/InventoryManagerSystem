@@ -2,79 +2,104 @@
 @using Blazored.LocalStorage
 @using InventoryManagerSystem.WEB.Providers
 @inject AuthenticationStateProvider AuthStateProvider
-
 @inject ILocalStorageService LocalStorage
 
-<EditForm Model="_loginRequestDto" method="post" OnValidSubmit="LoginAsync" FormName="Login" Enhance>
-    <div class="border border-blue-500 shadow-lg text-gray-900 p-5 rounded-[24px] min-w-[300px] max-w-md mx-auto">
-        <div class="text-gray-900 text-xl border-b border-blue-500 px-4 py-2 mb-4">
-            Login
-        </div>
-        <div class="p-4 opacity-100">
-            <DataAnnotationsValidator />
+@layout AuthLayout
 
-            <FloatingInputComponent
-                Id="email"
-                Type="text"
-                Label="Email"
-                @bind-Value="_loginRequestDto.Email" />
-            <ValidationMessage For="@(() => _loginRequestDto.Email)" />
-
-            <FloatingInputComponent
-                Id="password"
-                Type="password"
-                Label="Password"
-                @bind-Value="_loginRequestDto.Password" />
-            <ValidationMessage For="@(() => _loginRequestDto.Password)" />
-            
-
-            <div class="mb-6 flex justify-end">
-                <button class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded cursor-pointer" type="submit">
-                    Logar
-                </button>
+<div class="h-full flex items-center justify-center">
+    <EditForm Model="_loginRequestDto" method="post" OnValidSubmit="LoginAsync" FormName="Login" Enhance
+              class="max-h-[90vh] overflow-auto w-full max-w-md p-4 box-border">
+        <div class="border border-blue-500 shadow-lg text-gray-900 p-5 rounded-[24px] min-w-[300px] max-w-md mx-auto bg-white">
+            <div class="text-gray-900 text-xl border-b border-blue-500 px-4 py-2 mb-4">
+                Login
             </div>
+            <div class="p-4 opacity-100">
+                <DataAnnotationsValidator />
 
-            <div>
-                @if (!string.IsNullOrWhiteSpace(_errorMessage))
-                {
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                        @_errorMessage
-                    </div>
-                }
+                <FloatingInputComponent
+                    Id="email"
+                    Type="text"
+                    Label="Email"
+                    @bind-Value="_loginRequestDto.Email" />
+                <ValidationMessage For="@(() => _loginRequestDto.Email)" />
+
+                <FloatingInputComponent
+                    Id="password"
+                    Type="password"
+                    Label="Password"
+                    @bind-Value="_loginRequestDto.Password" />
+                <ValidationMessage For="@(() => _loginRequestDto.Password)" />
+
+                <div class="mb-6 flex justify-end">
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded cursor-pointer flex items-center justify-center space-x-2"
+                            type="submit" disabled="@isLoading">
+
+                        @if (isLoading)
+                        {
+                            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                            </svg>
+                            <span>Carregando...</span>
+                        }
+                        else
+                        {
+                            <span>Logar</span>
+                        }
+                    </button>
+                </div>
+
+                <div>
+                    @if (!string.IsNullOrWhiteSpace(_errorMessage))
+                    {
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                            @_errorMessage
+                        </div>
+                    }
+                </div>
             </div>
         </div>
-    </div>
-</EditForm>
+    </EditForm>
+</div>
+
 
 @code {
     private LoginRequestDto _loginRequestDto = new ();
     string _errorMessage = "";
+    private bool isLoading;
 
     private async Task LoginAsync()
     {
         _errorMessage = "";
-        
-        var response = await AuthService.LoginAsync(_loginRequestDto);
-
-        if (!response.IsSuccess)
+        isLoading = true;
+        try
         {
-            _errorMessage = _errorMessage = response.Message ?? "Erro desconhecido.";
-            return;
-        }
+            var response = await AuthService.LoginAsync(_loginRequestDto);
 
-        if (response.Data.ExpiresIn < DateTime.Now)
+            if (!response.IsSuccess)
+            {
+                _errorMessage = _errorMessage = response.Message ?? "Erro desconhecido.";
+                return;
+            }
+
+            if (response.Data.ExpiresIn < DateTime.Now)
+            {
+                NavigationManager.NavigateTo("/Login", forceLoad: true);
+                return;
+            }
+
+            await LocalStorage.SetItemAsStringAsync("authToken", response.Data!.AccessToken);
+
+            if (AuthStateProvider is CustomAuthStateProvider customAuth)
+            {
+                customAuth.NotifyUserAuthentication(response.Data!.AccessToken);
+            }
+
+            NavigationManager.NavigateTo("/home", true);
+        }
+        finally
         {
-            NavigationManager.NavigateTo("/Login", forceLoad: true);
-            return;
+            isLoading = false;
         }
-
-        await LocalStorage.SetItemAsStringAsync("authToken", response.Data!.AccessToken);
-
-        if (AuthStateProvider is CustomAuthStateProvider customAuth)
-        {
-            customAuth.NotifyUserAuthentication(response.Data!.AccessToken);
-        }
-        
-        NavigationManager.NavigateTo("/", true);
     }
 }
