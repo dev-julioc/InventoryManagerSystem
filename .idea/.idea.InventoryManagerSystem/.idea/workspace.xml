@@ -17,18 +17,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7dbf3b0-b5d4-4463-8f0b-c932d20bda72" name="Changes" comment="feat: feito ajustes na tela de login e redirecionamentos">
-      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Tracker.cs" afterDir="false" />
+    <list default="true" id="e7dbf3b0-b5d4-4463-8f0b-c932d20bda72" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Category/CategoryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Category/CategoryRoutes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Location/LocationHandlers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Location/LocationRoutes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Order/OrderHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Order/OrderRoutes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Product/ProductHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Product/ProductRoutes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Dtos/Category/CategoryDtos.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Dtos/Location/LocationDtos.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Dtos/Order/OrderDtos.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Dtos/Product/ProductDtos.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Map/CategoryMapping.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Map/LocationMapping.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Map/OrderMapping.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Map/ProductMapping.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/CategoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/Interfaces/ICategoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/Interfaces/ILocationService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/Interfaces/IOrderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/Interfaces/IProductService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/LocationService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/OrderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/ProductService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Constants/Constants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Category.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Location.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Order.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Product.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Interfaces/ICategoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Interfaces/ILocationRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Interfaces/IOrderRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Interfaces/IProductRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/EntitiesConfiguration/CategoryConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/EntitiesConfiguration/LocationConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/EntitiesConfiguration/OrderConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/EntitiesConfiguration/ProductConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Repositories/CategoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Repositories/LocationRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Repositories/OrderRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Repositories/ProductRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryManagerSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryManagerSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Auth/AuthHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Auth/AuthHandlers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Auth/AuthRoutes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Routes/Auth/AuthRoutes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Application/Services/Interfaces/IAuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Class1.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/InventoryManagerSystem.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/InventoryManagerSystem.Domain.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Auth/AuthManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Auth/AuthManagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/DbContext/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/DbContext/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/DbContext/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Context/AppDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/InventoryManagerSystem.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/InventoryManagerSystem.Infra.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Migrations/20250720162446_AddAuthTables.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Migrations/20250720162446_AddAuthTables.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.IoC/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.IoC/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Shared/Auth/IAuthManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Shared/Auth/IAuthManagement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Shared/Auth/Models.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Shared/Auth/Models.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,22 +118,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.InventoryManagerSystem.API: http (1).executor": "Debug",
-    ".NET Project.InventoryManagerSystem.WEB.Client.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.InventoryManagerSystem.API: http (1).executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Project.InventoryManagerSystem.WEB.Client.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.InventoryManagerSystem.API: http (1)">
     <configuration name="InventoryManagerSystem.API" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -382,7 +421,9 @@
       <workItem from="1752946280492" duration="15261000" />
       <workItem from="1753022345762" duration="4475000" />
       <workItem from="1753027009007" duration="16437000" />
-      <workItem from="1753119148441" duration="12618000" />
+      <workItem from="1753119148441" duration="13595000" />
+      <workItem from="1753187986896" duration="16793000" />
+      <workItem from="1753269968350" duration="7988000" />
     </task>
     <task id="LOCAL-00001" summary="feat: feito ajustes na tela de login e redirecionamentos">
       <option name="closed" value="true" />
@@ -392,7 +433,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753129481563</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add tracker entity, repository, service e rotas">
+      <option name="closed" value="true" />
+      <created>1753132355631</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753132355631</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,6 +452,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feat: feito ajustes na tela de login e redirecionamentos" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: feito ajustes na tela de login e redirecionamentos" />
+    <MESSAGE value="feat: add tracker entity, repository, service e rotas" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add tracker entity, repository, service e rotas" />
   </component>
 </project>

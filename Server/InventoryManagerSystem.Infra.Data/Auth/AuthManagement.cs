@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using InventoryManagerSystem.Domain.Entities;
 using InventoryManagerSystem.Infra.Data.Auth.Identity;
-using InventoryManagerSystem.Infra.Data.DbContext;
+using InventoryManagerSystem.Infra.Data.Context;
 using InventoryManagerSystem.Shared.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +12,19 @@ namespace InventoryManagerSystem.Infra.Data.Auth;
 public class AuthManagement(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenManagement tokenManagement, 
     RoleManager<IdentityRole> roleManager, AppDbContext context) : IAuthManagement
 {
+    public async Task<IEnumerable<UserResponseDto>> GetAllUsersAsync()
+    {
+        var users = await userManager.Users.ToListAsync();
+        
+        return users.Select(user => new UserResponseDto
+        (
+            user.Id,
+            user.Name!,
+            user.UserName!,
+            user.Email!
+        )).ToList();
+    }
+
     public async Task<(bool IsSuccess, string Message)> RegisterAsync(RegisterRequestDto registerDto)
     {
         var user = await FindUserByEmailAsync(registerDto.Email);

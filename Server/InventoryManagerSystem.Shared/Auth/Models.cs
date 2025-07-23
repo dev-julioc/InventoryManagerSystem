@@ -2,6 +2,14 @@ namespace InventoryManagerSystem.Shared.Auth;
 
 public record UserTokenModel(string Id, string Name, string Email);
 
+public record UserResponseDto
+(
+    string Id,
+    string Name,
+    string UserName,
+    string Email
+);
+
 public record TokenResponseDto
 (
     string AccessToken,

@@ -31,8 +31,4 @@
       <ProjectReference Include="..\InventoryManagerSystem.Shared\InventoryManagerSystem.Shared.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Repositories\" />
-    </ItemGroup>
-
 </Project>
