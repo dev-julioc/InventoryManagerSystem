@@ -1,3 +1,5 @@
+using InventoryManagerSystem.Domain.Validator;
+
 namespace InventoryManagerSystem.Domain.Entities;
 
 public sealed class Location
@@ -7,11 +9,20 @@ public sealed class Location
     
     public ICollection<Product> Products { get; set; } = new List<Product>();
 
+    private Location() { }
+    
     public Location(string name)
     {
-        
+        Validation(name);
     }
     
     public void Update(string name) 
         => Name = name;
+    
+    private void Validation(string name)
+    {
+        DomainValidationException.When(string.IsNullOrEmpty(name), ValidationMessageBuilder.RequiredField("name"));
+        DomainValidationException.When(name.Length is < 3 or > 150, ValidationMessageBuilder.RangeField("name", 3, 150));
+        Name = name;
+    }
 }

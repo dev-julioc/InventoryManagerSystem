@@ -19,6 +19,9 @@ public static class ValidationMessageBuilder
  
     public static string InvalidField(string fieldName)
         => $"{fieldName} inválido.";
+    
+    public static string Negative(string fieldName)
+        => $"{fieldName} não pode ser negativo.";
  
     public static string GreaterThanZero(string fieldName)
         => $"O campo {fieldName} deve ser maior que zero.";
