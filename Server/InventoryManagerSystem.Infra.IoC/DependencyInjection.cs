@@ -1,9 +1,11 @@
 using EntityFramework.Exceptions.PostgreSQL;
 using InventoryManagerSystem.Application.Services;
 using InventoryManagerSystem.Application.Services.Interfaces;
+using InventoryManagerSystem.Domain.Interfaces;
 using InventoryManagerSystem.Infra.Data.Auth;
 using InventoryManagerSystem.Infra.Data.Auth.Identity;
-using InventoryManagerSystem.Infra.Data.DbContext;
+using InventoryManagerSystem.Infra.Data.Context;
+using InventoryManagerSystem.Infra.Data.Repositories;
 using InventoryManagerSystem.Shared.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -50,6 +52,18 @@ public static class DependencyInjection
         services.AddScoped<IAuthManagement, AuthManagement>();
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ITokenManagement, TokenManagement>();
+
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ICategoryService, CategoryService>();
+
+        services.AddScoped<ILocationRepository, LocationRepository>();
+        services.AddScoped<ILocationService, LocationService>();
+
+        services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IOrderService, OrderService>();
+
+        services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IProductService, ProductService>();
       
 
         return services;

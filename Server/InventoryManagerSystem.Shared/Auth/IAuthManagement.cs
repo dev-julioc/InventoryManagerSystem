@@ -2,6 +2,7 @@ namespace InventoryManagerSystem.Shared.Auth;
 
 public interface IAuthManagement
 {
+    Task<IEnumerable<UserResponseDto>> GetAllUsersAsync();
     Task<(bool IsSuccess, string Message)> RegisterAsync(RegisterRequestDto registerDto);
     Task<(bool IsSuccess, string Message, TokenResponseDto? tokenResponse)> LoginAsync(LoginRequestDto loginDto);
     Task LogoutAsync();
