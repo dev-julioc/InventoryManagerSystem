@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using InventoryManagerSystem.WEB.Models.Auth;
 using InventoryManagerSystem.WEB.Services.Results;
 
@@ -13,4 +14,6 @@ public interface IAuthService
     Task<ResultService> UpdateUserAsync(ChangeUserClaimRequestDto changeUserClaimRequestDto);
     Task SaveActivityAsync(ActivityTrackerRequestDto activityTrackerRequestDto);
     Task<ResultService<IEnumerable<IGrouping<DateTime, ActivityTrackerResponseDto>>>> GroupActivitiesAsync();
+    
+    bool CustomClaimChecker(ClaimsPrincipal user, string specificClaim);
 }

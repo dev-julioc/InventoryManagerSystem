@@ -29,6 +29,8 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
+      <_ContentIncludedByDefault Remove="Layout\SideBar\Brand.razor" />
+      <_ContentIncludedByDefault Remove="Layout\SideBar\Content.razor" />
     </ItemGroup>
 
 </Project>

@@ -10,7 +10,20 @@ using Microsoft.AspNetCore.Components.Authorization;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
-builder.Services.AddAuthorizationCore();
+builder.Services.AddAuthorizationCore(opt =>
+{
+    opt.AddPolicy("AdministrationPolicy", adp =>
+    {
+        adp.RequireAuthenticatedUser();
+        adp.RequireRole("Admin", "Manager");
+    });
+    opt.AddPolicy("UserPolicy", adp =>
+    {
+        adp.RequireAuthenticatedUser();
+        adp.RequireRole("User");
+    });
+});
+builder.Services.AddScoped<CustomAuthStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 builder.Services.AddBlazoredLocalStorage();
 

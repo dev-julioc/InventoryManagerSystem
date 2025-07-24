@@ -1,0 +1,106 @@
+<div class="flex flex-col flex-grow">
+    <AuthorizeView Context="menuUser">
+        <li class="mt-5 list-none">
+            <NavLink href="/app/home" class="flex items-center gap-3 px-3 py-3 hover:text-blue-400" activeClass="text-blue-400">
+                <i class="mdi mdi-home text-xl"></i>
+                Home
+            </NavLink>
+        </li>
+    </AuthorizeView>
+
+    <AuthorizeView Policy="AdministrationPolicy" Context="adminUser">
+        @if (CanManagerUser)
+        {
+            <li class="list-none" x-data="{ open: false }">
+                <button
+                    @click="open = !open"
+                    class="flex items-center justify-between w-full text-left px-3 py-3 text-white cursor-pointer hover:text-blue-400"
+                >
+                    <div class="flex items-center gap-2">
+                        <i class="mdi mdi-account-settings text-xl mr-2"></i>
+                        <span class="font-medium">User Management</span>
+                    </div>
+                    <svg :class="{ 'rotate-90': open }" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <ul x-show="open" x-transition class="pl-8 space-y-1 text-white">
+                    <li>
+                        <NavLink href="/administration/account/create-user" class="block px-4 py-1 hover:text-blue-400" activeClass="text-blue-400">AddUser</NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink href="/administration/account/users/manage" class="block px-4 py-1 hover:text-blue-400" activeClass="text-blue-400">Manage Users</NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="/administration/account/user-management-account" class="block px-4 py-1 hover:text-blue-400" activeClass="text-blue-400">Account</NavLink>
+                    </li>
+                </ul>
+            </li>
+        }
+
+        <li class="list-none" x-data="{ open: false }">
+            <button
+                @click="open = !open"
+                class="flex items-center justify-between w-full text-left px-3 py-3 text-white cursor-pointer hover:text-blue-400"
+            >
+                <div class="flex items-center gap-2">
+                    <i class="mdi mdi-cube text-lg"></i>
+                    <span class="font-medium">Product Management</span>
+                </div>
+                <svg :class="{'rotate-90': open}" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <ul x-show="open" x-transition class="pl-8 space-y-1 text-white">
+                <li>
+                    <NavLink href="/app/products/manage" class="block px-4 py-1 hover:text-blue-400" activeClass="text-blue-400">Products</NavLink>
+                </li>
+                <li>
+                    <NavLink href="/app/category/manage" class="block px-4 py-1 hover:text-blue-400" activeClass="text-blue-400">Categories</NavLink>
+                </li>
+                <li>
+                    <NavLink href="/app/location/manage" class="block px-4 py-1 hover:text-blue-400" activeClass="text-blue-400">Locations</NavLink>
+                </li>
+            </ul>
+        </li>
+
+        <li class="list-none">
+            <NavLink href="/app/administration/products/orders" class="flex items-center gap-3 px-3 py-3 hover:text-blue-400" activeClass="text-blue-400">
+                <i class="mdi mdi-cube-unfolded text-lg"></i>
+                Orders
+            </NavLink>
+        </li>
+    </AuthorizeView>
+
+    <AuthorizeView Policy="@Policy.UserPolicy" Context="userPolicyUser">
+        <li class="list-none">
+            <a href="/app/products/orders" class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 text-white">
+                <i class="mdi mdi-cube-unfolded text-lg"></i>
+                <span class="font-medium">My Orders</span>
+            </a>
+        </li>
+    </AuthorizeView>
+
+    <!-- System Info fixado ao final -->
+    <AuthorizeView Context="footerUser">
+        <li class="list-none mt-auto px-4">
+            <hr class="my-5 border-t border-gray-300" />
+            <div class="text-white">
+                <p class="font-semibold">System Info</p>
+                <ul class="mt-4 pl-0">
+                    <li>
+                        <span class="text-sm text-gray-300">Version 1.0.0</span>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </AuthorizeView>
+</div>
+
+@code {
+    [Parameter]
+    public bool CanManagerUser{ get; set; }
+}

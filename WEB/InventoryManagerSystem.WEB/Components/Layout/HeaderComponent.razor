@@ -1,0 +1,42 @@
+<header class="h-14 flex items-center justify-end bg-gray-800 text-white px-6 sticky top-0 z-50 shadow-md">
+    <li class="relative flex items-center gap-2 cursor-pointer border-0 list-none" tabindex="0">
+        <button @onclick="ToggleProfileDropdown"
+                class="flex items-center gap-2 text-gray-200 font-medium px-3 py-2 hover:text-white focus:outline-none bg-transparent border-0 cursor-pointer">
+            <span class="text-sm">@Name</span>
+            <svg class="w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+
+        @if (IsProfileDropdownOpen)
+        {
+            <div class="absolute right-0 top-full mt-1 w-30 bg-white border border-gray-200 rounded shadow-md z-50">
+                <button @onclick="Logout" class="text-red-600 font-bold px-3 py-1 hover:text-red-800 transition-colors w-full text-left cursor-pointer">
+                    <i class="bi bi-box-arrow-right text-red-600"></i> Logout
+                </button>
+            </div>
+        }
+    </li>
+</header>
+
+@code {
+    [Parameter] 
+    public bool IsProfileDropdownOpen { get; set; }
+    
+    [Parameter]
+    public string? Name { get; set; }
+    
+    [Parameter]
+    public EventCallback<bool> IsProfileDropdownOpenChanged { get; set; }
+    
+    private void ToggleProfileDropdown()
+    {
+        IsProfileDropdownOpenChanged.InvokeAsync(IsProfileDropdownOpen);
+    }
+    
+    private async void Logout()
+    {
+        await AuthService.LogoutAsync();
+    }
+    
+}

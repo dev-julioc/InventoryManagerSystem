@@ -1,8 +1,6 @@
 @page "/Login"
-@using Blazored.LocalStorage
-@using InventoryManagerSystem.WEB.Providers
-@inject AuthenticationStateProvider AuthStateProvider
-@inject ILocalStorageService LocalStorage
+
+
 
 @layout AuthLayout
 
@@ -95,7 +93,7 @@
                 customAuth.NotifyUserAuthentication(response.Data!.AccessToken);
             }
 
-            NavigationManager.NavigateTo("/home", true);
+            NavigationManager.NavigateTo("/app/home", true);
         }
         finally
         {

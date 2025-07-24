@@ -17,12 +17,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7dbf3b0-b5d4-4463-8f0b-c932d20bda72" name="Changes" comment="feat: adicionado os endpoints de order, category, product e location">
-      <change afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Validator/DomainValidationException.cs" afterDir="false" />
+    <list default="true" id="e7dbf3b0-b5d4-4463-8f0b-c932d20bda72" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/Layout/FooterComponent.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/Layout/HeaderComponent.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/Layout/LogoComponent.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/Layout/SideBarContentComponent.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Constants/Constants.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryManagerSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryManagerSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Location.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Entities/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Constants/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Domain/Constants/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Auth/AuthManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Auth/AuthManagement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Auth/TokenManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/InventoryManagerSystem.Infra.Data/Auth/TokenManagement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/FloatingInputComponent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/FloatingInputComponent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/RedirectToLoginComponent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Components/RedirectToLoginComponent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/InventoryManagerSystem.WEB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/InventoryManagerSystem.WEB.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Layout/NavMenu.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/AccessDeniedPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/AccessDeniedPage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/AuthPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/AuthPage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/HomePage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/HomePage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/LoginPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Pages/LoginPage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Providers/CustomAuthStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Providers/CustomAuthStateProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/Services/Interfaces/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB/InventoryManagerSystem.WEB/wwwroot/tailwind.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +401,8 @@
       <workItem from="1753027009007" duration="16437000" />
       <workItem from="1753119148441" duration="13595000" />
       <workItem from="1753187986896" duration="16793000" />
-      <workItem from="1753269968350" duration="8920000" />
+      <workItem from="1753269968350" duration="29517000" />
+      <workItem from="1753355881132" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="feat: feito ajustes na tela de login e redirecionamentos">
       <option name="closed" value="true" />
@@ -427,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753279257554</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: adicionado validações das entidades e dos dtos">
+      <option name="closed" value="true" />
+      <created>1753281052210</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753281052210</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,6 +476,7 @@
     <MESSAGE value="feat: adicionado os repositories e configuration, assim como as migrations das entidades product, category, location e order" />
     <MESSAGE value="feat: adicionado os serviços, dtos, mapeamento e validações das entidades order, product, category e location" />
     <MESSAGE value="feat: adicionado os endpoints de order, category, product e location" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionado os endpoints de order, category, product e location" />
+    <MESSAGE value="feat: adicionado validações das entidades e dos dtos" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionado validações das entidades e dos dtos" />
   </component>
 </project>

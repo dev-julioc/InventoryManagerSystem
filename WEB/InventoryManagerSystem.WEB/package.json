@@ -2,5 +2,8 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
     "tailwindcss": "^4.1.11"
+  },
+  "scripts": {
+    "watch:css": "tailwindcss -i ./Styles/input.css -o ./wwwroot/tailwind.css --watch"
   }
 }

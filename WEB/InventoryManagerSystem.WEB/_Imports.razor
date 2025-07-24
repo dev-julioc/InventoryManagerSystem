@@ -13,5 +13,16 @@
 @using InventoryManagerSystem.WEB.Services.Interfaces
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Authorization
+@using Blazored.LocalStorage
+@using InventoryManagerSystem.WEB.Providers
+@using InventoryManagerSystem.WEB.Constants
+@using InventoryManagerSystem.WEB.Components.Layout
+
+
 @inject IAuthService AuthService
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthStateProvider
+@inject CustomAuthStateProvider CustomAuthStateProvider
+@inject ILocalStorageService LocalStorage
+
+

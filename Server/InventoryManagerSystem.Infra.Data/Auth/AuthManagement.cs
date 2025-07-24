@@ -228,6 +228,7 @@ public class AuthManagement(UserManager<ApplicationUser> userManager, SignInMana
             return (false, "No policy specified.");
 
         Claim[] userClaims = [];
+        var userRole = string.Empty;
 
         if (registerDto.Policy.Equals(Policy.AdminPolicy, StringComparison.OrdinalIgnoreCase))
         {
@@ -242,6 +243,8 @@ public class AuthManagement(UserManager<ApplicationUser> userManager, SignInMana
                 new Claim("Read", "true"),
                 new Claim("ManagerUser", "true")
             ];
+            
+            userRole = "Admin";
         }
         else if (registerDto.Policy.Equals(Policy.ManagerPolicy, StringComparison.OrdinalIgnoreCase))
         {
@@ -256,6 +259,8 @@ public class AuthManagement(UserManager<ApplicationUser> userManager, SignInMana
                 new Claim("Read", "true"),
                 new Claim("ManagerUser", "false")
             ];
+
+            userRole = "Manager";
         }
         else if (registerDto.Policy.Equals(Policy.UserPolicy, StringComparison.OrdinalIgnoreCase))
         {
@@ -270,9 +275,21 @@ public class AuthManagement(UserManager<ApplicationUser> userManager, SignInMana
                 new Claim("Read", "false"),
                 new Claim("ManagerUser", "false")
             ];
+            
+            userRole = "User";
         }
 
-        var result = await userManager.AddClaimsAsync((await FindUserByEmailAsync(registerDto.Email))!, userClaims);
+        var user = await FindUserByEmailAsync(registerDto.Email);
+        
+        var resultRole = await userManager.AddToRoleAsync(user!, userRole);
+        
+        if (!resultRole.Succeeded)
+        {
+            var errors = resultRole.Errors.Select(_ => _.Description);
+            return (false, string.Join('\n', errors));
+        }
+
+        var result = await userManager.AddClaimsAsync(user!, userClaims);
         
         if (!result.Succeeded)
         {

@@ -24,7 +24,7 @@ public class CustomAuthStateProvider(ILocalStorageService localStorageService) :
         
         var jwt = handler.ReadJwtToken(token);
         
-        var identity = new ClaimsIdentity(jwt.Claims, "jwt");
+        var identity = new ClaimsIdentity(jwt.Claims, "jwt", ClaimTypes.Name, "role");
 
         var user = new ClaimsPrincipal(identity);
 

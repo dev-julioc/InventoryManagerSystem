@@ -1,6 +1,4 @@
 @page "/"
-@inject NavigationManager Navigation
-@inject AuthenticationStateProvider AuthStateProvider
 
 @code {
     protected override async Task OnInitializedAsync()
@@ -10,11 +8,11 @@
 
         if (user.Identity?.IsAuthenticated ?? false)
         {
-            Navigation.NavigateTo("/home", true);
+            NavigationManager.NavigateTo("/app/home", true);
         }
         else
         {
-            Navigation.NavigateTo("/login", true);
+            NavigationManager.NavigateTo("/login", true);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using System.Security.Claims;
 using InventoryManagerSystem.WEB.Models.Auth;
 using InventoryManagerSystem.WEB.Services.Interfaces;
 using InventoryManagerSystem.WEB.Services.Results;
@@ -123,5 +124,19 @@ public class AuthService(HttpClient httpClient, NavigationManager navigationMana
     public async Task<ResultService<IEnumerable<IGrouping<DateTime, ActivityTrackerResponseDto>>>> GroupActivitiesAsync()
     {
         throw new NotImplementedException();
+    }
+
+    public bool CustomClaimChecker(ClaimsPrincipal user, string specificClaim)
+    {
+        if (!user.Identity!.IsAuthenticated)
+            return false;
+        
+        var getClaim = user.HasClaim(_ => _.Type == specificClaim);
+        if (!getClaim)
+            return false;
+        
+        var getState = user.Claims.FirstOrDefault(x => x.Type == specificClaim)?.Value;
+        
+        return Convert.ToBoolean(getState);
     }
 }

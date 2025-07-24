@@ -21,19 +21,19 @@ public class TokenManagement(UserManager<ApplicationUser> userManager, IConfigur
         
         var userRole = userClaims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
         
-        var claims = new List<Claim>
-        {
-            new(ClaimTypes.NameIdentifier, user.Id),
-            new (ClaimTypes.Name, user.Name!),
-            new (ClaimTypes.Role, userRole)
-        };
+        // var claims = new List<Claim>
+        // {
+        //     new(ClaimTypes.NameIdentifier, user.Id),
+        //     new (ClaimTypes.Name, user.Name!),
+        //     new (ClaimTypes.Role, userRole)
+        // };
         
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:SecretKey"]!));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
         var expiration = DateTime.Now.AddDays(configuration.GetSection("JWT").GetValue<double>("ExpirationToken"));
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity(claims),
+            Subject = new ClaimsIdentity(userClaims),
             Expires = expiration,
             SigningCredentials = credentials,
             Issuer = configuration["JWT:Issuer"],

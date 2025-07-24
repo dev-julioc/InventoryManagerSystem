@@ -1,6 +1,4 @@
 @page "/auth"
-@using InventoryManagerSystem.WEB.Services.Interfaces
-@inject IAuthService authService
 
 @code {
 
@@ -8,7 +6,7 @@
     {
         try
         {
-            var response = await authService.SetUpAsync();
+            var response = await AuthService.SetUpAsync();
             
             
         }

@@ -2,6 +2,7 @@ using Carter;
 using FluentValidation;
 using InventoryManagerSystem.Application.Dtos.Auth.Validation;
 using InventoryManagerSystem.Infra.IoC;
+using InventoryManagerSystem.Shared.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,4 +49,5 @@ app.UseCors("AllowBlazor");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+await app.Services.SeedRoles();
 app.Run();
